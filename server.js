@@ -3,7 +3,7 @@ const app = express()
 
 app.use(express.static('public'))
 
-app.get('/login',(req,res)=>{
+app.get('/',(req,res)=>{
     res.render('index.ejs')
 })
 
