@@ -10,7 +10,7 @@ const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/'+ `account`
 mongoose.connect(MONGODB_URI);
 const authenticationSchema = {username: String,password: String};
 db.on('open' , ()=>{});
-const account = mongoose.model('account',authenticationSchema);
+const account = mongoose.model('accounts',authenticationSchema);
 
 app.use(express.static('public'))
 app.use(express.urlencoded({extended:false}));
