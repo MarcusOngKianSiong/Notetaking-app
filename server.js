@@ -11,12 +11,20 @@ mongoose.connect(MONGODB_URI);
 const authenticationSchema = {username: String,password: String};
 db.on('open' , ()=>{});
 const account = mongoose.model('accounts',authenticationSchema);
+account.create({username:"marcus",password:"123"},(error,creatingAcc)=>{
+    if(error){
+        console.log(error);
+    }else{
+        console.log("ACCOUNT CREATED: ",creatingAcc);
+    }
+})
 
 app.use(express.static('public'))
 app.use(express.urlencoded({extended:false}));
 
 app.get('/',(req,res)=>{
     console.log("------------LOGIN PAGE OPENING!!!--------"); 
+
     account.find((err,res)=>{
         if(err){
             console.log("----ERROR------")
