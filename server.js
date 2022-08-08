@@ -21,7 +21,7 @@ app.get('/',(req,res)=>{
         if(err){
             console.log("----ERROR------")
         }else{
-            console.log(res);
+            console.log("SEE THIS: ",res);
         }
     })
     res.render('index.ejs',{
