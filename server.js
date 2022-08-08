@@ -11,7 +11,7 @@ mongoose.connect(MONGODB_URI);
 const authenticationSchema = {username: String,password: String};
 db.on('open' , ()=>{});
 const account = mongoose.model('accounts',authenticationSchema);
-account.create({username:"marcus",password:"123"},(error,creatingAcc)=>{
+account.create({username:"timmy",password:"123"},(error,creatingAcc)=>{
     if(error){
         console.log(error);
     }else{
