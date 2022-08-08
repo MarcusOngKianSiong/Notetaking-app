@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 const db = mongoose.connection;
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/'+ `account`;
 mongoose.connect(MONGODB_URI);
-// db.on('open' , ()=>{}); 
+db.on('open' , ()=>{});
 
 app.use(express.static('public'))
 app.use(express.urlencoded({extended:false}));
