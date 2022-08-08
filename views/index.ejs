@@ -5,12 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/login.css">
     <title>Document</title>
 </head>
 <body>
-    <form >
-
+    <form action="/login" method="POST">
+        <div>
+            <label for="username">username</label>
+            <input type="text" name="username">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="text" name="password">
+        </div>
+        <input type="submit" name="" value="Login"></input>
+        <%if(loginFailed === true){%>
+            <p class="invalidLogin">Invalid username or password</p>
+        <%}%>
     </form>
-    
 </body>
 </html>
