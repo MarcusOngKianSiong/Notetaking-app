@@ -17,7 +17,7 @@ app.use(express.urlencoded({extended:false}));
 
 app.get('/',(req,res)=>{
     console.log("------------LOGIN PAGE OPENING!!!--------"); 
-    db.find((err,res)=>{
+    account.find((err,res)=>{
         if(err){
             console.log("----ERROR------")
         }else{
