@@ -11,7 +11,7 @@ const level1 = mongoose.model('level 1',{contents: String});
 db.on('open' , ()=>{}); 
 
 creatingNewNote.get("/createNewNote",(req,res)=>{
-    const collections = db.listCollections;
+    const collections = db.listCollections();
     console.log(collections)
     res.render("note.ejs",{ 
         authenticationOutcome: "success",
