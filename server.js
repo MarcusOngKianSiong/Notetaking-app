@@ -26,13 +26,6 @@ app.use('/login',authenticate);                                     // LOGIN STE
 
 app.get('/',(req,res)=>{
     console.log("------------LOGIN PAGE OPENING!!!--------"); 
-    account.find((err,res)=>{
-        if(err){
-            console.log("----ERROR------")
-        }else{
-            console.log("SEE THIS: ",res);
-        }
-    })
     res.render('index.ejs',{
         loginFailed: false
     })
