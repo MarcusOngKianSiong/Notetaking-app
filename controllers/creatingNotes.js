@@ -9,7 +9,7 @@ const authenticationSchema = {username: String,password: String};
 // const account = mongoose.model('accounts',authenticationSchema);
 db.on('open' , ()=>{}); 
 
-creatingNewNote.post("/createNewNote",(req,res)=>{
+creatingNewNote.get("/createNewNote",(req,res)=>{
     const collections = db.collections();
     res.render("note.ejs",{ 
         collections: collections
