@@ -22,6 +22,7 @@ authenticate.post('/login',(req,res)=>{
                 authenticationOutcome: "Something is wrong!!!!"
             });
         }else{
+            console.log(findings);
             res.render('../views/test.ejs',{
                 authenticationOutcome: findings
             });
