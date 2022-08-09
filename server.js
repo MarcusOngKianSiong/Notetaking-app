@@ -12,17 +12,18 @@ const PORT = process.env.PORT || 3000;
 // const authenticationSchema = {username: String,password: String};
 // db.on('open' , ()=>{});
 // const account = mongoose.model('accounts',authenticationSchema);
-// // account.create({username:"timmy",password:"123"},(error,creatingAcc)=>{
-// //     if(error){
-// //         console.log(error);
-// //     }else{
-// //         console.log("ACCOUNT CREATED: ",creatingAcc);
-// //     }
-// // })
+// // // account.create({username:"timmy",password:"123"},(error,creatingAcc)=>{
+// // //     if(error){
+// // //         console.log(error);
+// // //     }else{
+// // //         console.log("ACCOUNT CREATED: ",creatingAcc);
+// // //     }
+// // // })
 
 app.use(express.static('public'))
 app.use(express.urlencoded({extended:false}));
 app.use('/login',authenticate);                                     // LOGIN STEP
+
 
 app.get('/',(req,res)=>{
     console.log("------------LOGIN PAGE OPENING!!!--------"); 
