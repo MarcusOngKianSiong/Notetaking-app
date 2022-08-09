@@ -9,3 +9,9 @@
     width: 50vw;
     height: 100vh;
 }
+
+.topBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
