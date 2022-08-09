@@ -27,9 +27,7 @@ authenticate.post('/login',(req,res)=>{
                     loginFailed: true
                 });
             }else{
-                res.render('../views/note.ejs',{
-                    authenticationOutcome: findings
-                });
+                res.render('../views/note.ejs');
             }
         }
     })
