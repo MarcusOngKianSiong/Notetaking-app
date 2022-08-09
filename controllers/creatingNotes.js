@@ -6,6 +6,7 @@ const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/' + `account
 mongoose.connect(MONGODB_URI);
 const db = mongoose.connection;
 const authenticationSchema = {username: String,password: String};
+const level1 = mongoose.model('level 1')
 // const account = mongoose.model('accounts',authenticationSchema);
 db.on('open' , ()=>{}); 
 
