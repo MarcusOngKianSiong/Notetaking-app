@@ -10,7 +10,7 @@ const authenticationSchema = {username: String,password: String};
 db.on('open' , ()=>{}); 
 
 creatingNewNote.get("/createNewNote",(req,res)=>{
-    const collections = db.collections();
+    const collections = db.collections;
     res.render("note.ejs",{ 
         collections: collections
     })
