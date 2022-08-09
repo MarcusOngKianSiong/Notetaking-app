@@ -1,7 +1,11 @@
 .noteOrganiser{
     background-color: black;
+    width: 50vw;
+    height: 100vh;
 }
 
 .notepad{
     background-color: white;
+    width: 50vw;
+    height: 100vh;
 }
