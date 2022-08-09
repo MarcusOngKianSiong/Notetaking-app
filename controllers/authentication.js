@@ -32,7 +32,6 @@ authenticate.post('/login',(req,res)=>{
                 });
             }
         }
-        
     })
 })
 

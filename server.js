@@ -1,7 +1,10 @@
 const express = require('express')
 const app = express()
 const mongoose = require("mongoose");
+
+// Controllers
 const authenticate = require("./controllers/authentication.js")
+const createNewNote = require("./controllers/creatingNotes.js")
 
 const PORT = process.env.PORT || 3000;
 
@@ -23,6 +26,8 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static('public'))
 app.use(express.urlencoded({extended:false}));
 app.use('/login',authenticate);                                     // LOGIN STEP
+
+app.post('/createNewNote',createNewNote);
 
 app.get('/',(req,res)=>{
     console.log("------------LOGIN PAGE OPENING!!!--------"); 
