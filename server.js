@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const mongoose = require("mongoose");
-const authenticate = require("../controller/authentication.js")
+const authenticate = require("./controllers/authentication.js")
 
 const PORT = process.env.PORT || 3000;
 
