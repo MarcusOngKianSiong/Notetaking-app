@@ -18,20 +18,19 @@ authenticate.post('/login',(req,res)=>{
     // Check if username exists
     account.find({username: username,password: password},(error,findings)=>{
         if(error){
-            res.render('../views/test.ejs',{
+            res.render('../views/note.ejs',{
                 authenticationOutcome: "Something is wrong!!!!"
             });
         }else{
             if(findings.length === 0){
-                res.render('../views/test.ejs',{
-                    authenticationOutcome: "Nothing found!!!!"
+                res.render('../views/index.ejs',{
+                    loginFailed: true
                 });
             }else{
-                res.render('../views/test.ejs',{
+                res.render('../views/note.ejs',{
                     authenticationOutcome: findings
                 });
             }
-            
         }
         
     })
