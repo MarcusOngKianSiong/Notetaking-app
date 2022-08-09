@@ -2,13 +2,13 @@ const express = require("express");
 const authenticate = express.Router();
 
 // database access setup
-// const mongoose = require("mongoose");
-// const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/'+ `account`;
-// mongoose.connect(MONGODB_URI);
-// const db = mongoose.connection;
-// const authenticationSchema = {username: String,password: String};
-// const account = mongoose.model('accounts',authenticationSchema);
-// db.on('open' , ()=>{}); 
+const mongoose = require("mongoose");
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/'+ `account`;
+mongoose.connect(MONGODB_URI);
+const db = mongoose.connection;
+const authenticationSchema = {username: String,password: String};
+const account = mongoose.model('accounts',authenticationSchema);
+db.on('open' , ()=>{}); 
 
 authenticate.post('/login',(req,res)=>{
     // Data from user
