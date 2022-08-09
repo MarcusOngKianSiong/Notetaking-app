@@ -11,6 +11,7 @@ db.on('open' , ()=>{});
 
 creatingNewNote.get("/createNewNote",(req,res)=>{
     const collections = db.collections;
+    console.log(collections)
     res.render("note.ejs",{ 
         authenticationOutcome: "success",
         collections: collections
