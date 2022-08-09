@@ -11,6 +11,7 @@ const account = mongoose.model('accounts',authenticationSchema);
 db.on('open' , ()=>{}); 
 
 authenticate.post('/login',(req,res)=>{
+    console.log("STOPPED HERE!!!")
     // Data from user
     const username = req.body.username;
     const password = req.body.password;
