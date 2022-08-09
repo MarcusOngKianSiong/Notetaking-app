@@ -27,7 +27,7 @@ app.use(express.static('public'))
 app.use(express.urlencoded({extended:false}));
 app.use('/login',authenticate);                                     // LOGIN STEP
 
-app.post('/createNewNote',createNewNote);
+app.get('/createNewNote',createNewNote);
 
 app.get('/',(req,res)=>{
     console.log("------------LOGIN PAGE OPENING!!!--------"); 
