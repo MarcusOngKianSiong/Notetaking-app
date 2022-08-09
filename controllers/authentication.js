@@ -22,10 +22,16 @@ authenticate.post('/login',(req,res)=>{
                 authenticationOutcome: "Something is wrong!!!!"
             });
         }else{
-            console.log(findings);
-            res.render('../views/test.ejs',{
-                authenticationOutcome: findings
-            });
+            if(findings.length === 0){
+                res.render('../views/test.ejs',{
+                    authenticationOutcome: "Nothing found!!!!"
+                });
+            }else{
+                res.render('../views/test.ejs',{
+                    authenticationOutcome: findings
+                });
+            }
+            
         }
         
     })
