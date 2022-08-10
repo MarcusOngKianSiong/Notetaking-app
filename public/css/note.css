@@ -1,20 +1,18 @@
 .body{
-    width: 100vw;
-    height: 100vh;
     display: flex;
     flex-direction: row;
 }
 
 .noteOrganiser{
     background-color: brown;
-    
+    width: 25vw;
     height: 100vh;
     border-radius: 10px;
 }
 
 .notepad{
     background-color: white;
-    
+    width: 70vw;
     height: 100vh;
 }
 
