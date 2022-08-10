@@ -4,6 +4,7 @@ body{
 }
 
 .noteOrganiser{
+    border-radius: 10px 10px 0px 0px;
     background-color: brown;
     width: 25vw;
     height: 100vh;
