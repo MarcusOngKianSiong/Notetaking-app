@@ -1,6 +1,6 @@
 const express = require('express');
-const accountsData = require("/database/accessPoint.js").accountsData;
-const notesData = require("/database/accessPoint.js").notesData;
+const accountsData = require("./public/database/accessPoint.js").accountsData;
+const notesData = require("./public/database/accessPoint.js").notesData;
 const mongoose = require("mongoose");
 const app = express();
 
