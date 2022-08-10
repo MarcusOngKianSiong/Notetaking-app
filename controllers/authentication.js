@@ -1,8 +1,8 @@
 const { compare } = require("bcrypt");
 const express = require("express");
 const authenticate = express.Router();
-const accountsData = require("./public/database/accessPoint.js").accountsData;
-const notesData = require("./public/database/accessPoint.js").notesData;
+const accountsData = require("../public/database/accessPoint.js").accountsData;
+const notesData = require("../public/database/accessPoint.js").notesData;
 
 authenticate.post('/login',(req,res)=>{
     console.log("STOPPED HERE!!!");
