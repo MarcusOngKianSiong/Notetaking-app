@@ -26,21 +26,13 @@
         <script type="text/javascript" src="/richtexteditor/rte.js"></script>
         <script type="text/javascript" src='/richtexteditor/plugins/all_plugins.js'></script>
         <div id="div_editor1">
-	        
+	        <p>Something here</p>
         </div>
         <script>
 	         var editor1 = new RichTextEditor("#div_editor1");
+             console.log(editor1.getText());
 	        //editor1.setHTMLCode("Use inline HTML or setHTMLCode to init the default content.");
         </script>
     </div>
-    <script>
-        const textEditor = document.querySelector(".notepad");
-        const block = document.querySelector(".notepad");
-        textEditor.addEventListener("keydown",(res)=>{
-            const item = document.createElement("p");
-            item.textContent = "Hello thee";
-            block.appendChild(item);
-        })
-    </script>
 </body>
 </html>
