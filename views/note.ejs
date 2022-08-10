@@ -14,7 +14,9 @@
             <input type="button" value="+" href="">
         </div>
         <div class="notes">
-            <p><%=notes%></p>
+            <%for(let i = 0; i<notes.length ; i++){%>
+                <p><%=notes[i]%></p>
+            <%}%>
         </div>
     </div>
     <div class="notepad">
