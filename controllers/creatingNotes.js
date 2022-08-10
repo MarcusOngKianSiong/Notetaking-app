@@ -5,21 +5,27 @@ const creatingNewNote = express.Router();
 const accountsData = require("../public/database/accessPoint.js").accountsData;
 const notesData = require("../public/database/accessPoint.js").notesData;
 
-creatingNewNote.post('/createNewNote',(req,res)=>{
-    console.log("-----CREATING NEW NOTE-----")
-    // create a document in the collection
+function createNewNote(){
     notesData.create({user: "marcus", name: "random", identificationNumber: "1", dependencies: "0", contents: "Something here"})
-    
-    // Gather a list of documents by name
+}
+function displayAllNotes(){
     let listOfNotes = [];
     notesData.find({user: "marcus"},(error,notes)=>{
         notes.forEach(element => {
             listOfNotes.push(element.name);
-        });
-        // reset the view
-        res.render('note.ejs',{
-            notes: listOfNotes
-        })
+        });  
+    })
+    return listOfNotes;
+}
+
+creatingNewNote.post('/createNewNote',(req,res)=>{
+    console.log("-----CREATING NEW NOTE-----")
+    // create a document in the collection
+    createNewNote();
+    // Gather a list of documents by name
+    const listOfNotes = displayAllNotes();
+    res.render('note.ejs',{
+        notes: listOfNotes
     })
 })
 
