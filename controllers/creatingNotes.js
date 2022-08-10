@@ -12,7 +12,7 @@ const notes = mongoose.model('notes',{user: String, identification: String, depe
 db.on('open' , ()=>{});
 
 creatingNewNote.get("/createNewNote",(req,res)=>{
-    res.render("note.ejs",{
+    res.render('note.ejs',{
         notes: "something"
     })
 })
