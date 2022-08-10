@@ -10,6 +10,11 @@ const authenticationSchema = {username: String,password: String};
 const account = mongoose.model('accounts',authenticationSchema);
 db.on('open' , ()=>{}); 
 
+function retrieveListOfNotesFromDatabase(name){
+    // Get the name of the notes, number, owner name
+    
+}
+
 authenticate.post('/login',(req,res)=>{
     console.log("STOPPED HERE!!!");
     // Data from user
@@ -27,8 +32,11 @@ authenticate.post('/login',(req,res)=>{
                     loginFailed: true
                 });
             }else{
+                const notes = db.find({username: "marcus"},(error,notes)=>{
+                    console.log(notes)
+                })
                 res.render('../views/note.ejs',{
-                    notes: ["something","nothing"]
+                    notes: ["something","nothing"] 
                 });
             }
         }

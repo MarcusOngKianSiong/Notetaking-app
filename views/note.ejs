@@ -11,7 +11,9 @@
     <div class="noteOrganiser">
         <div class="topBar">
             <input type="button" value="logout">
-            <input type="button" value="+" href="">
+            <form action="https://takingnote-app.herokuapp.com/createNewNote">
+                <input type="button" value="+">
+            </form>
         </div>
         <div class="notes">
             <%for(let i = 0; i<notes.length ; i++){%>

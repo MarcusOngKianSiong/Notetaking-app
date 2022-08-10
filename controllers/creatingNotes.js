@@ -13,7 +13,7 @@ db.on('open' , ()=>{});
 
 creatingNewNote.get("/createNewNote",(req,res)=>{
     res.render('note.ejs',{
-        notes: "something"
+        
     })
 })
 
