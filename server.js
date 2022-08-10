@@ -13,7 +13,8 @@ const createNewNote = require("./controllers/creatingNotes.js")
 app.use(express.static('public'))
 app.use(express.urlencoded({extended:false}));
 app.use('/login',authenticate);                                     // LOGIN STEP
-app.use('/createNewNote',createNewNote);
+
+app.post('/createNewNote',createNewNote);
 
 app.get('/',(req,res)=>{
     console.log("------------LOGIN PAGE OPENING!!!--------"); 
