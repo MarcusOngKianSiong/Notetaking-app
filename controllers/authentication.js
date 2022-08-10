@@ -32,7 +32,7 @@ authenticate.post('/login',(req,res)=>{
                     loginFailed: true
                 });
             }else{
-                const notes = db.find({username: "marcus"},(error,notes)=>{
+                const notes = notes.find({username: "marcus"},(error,notes)=>{
                     console.log(notes)
                 })
                 res.render('../views/note.ejs',{
