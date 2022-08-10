@@ -6,7 +6,7 @@ const db = mongoose.connection;
 
 // Schemas
 const accountDataSchema = {username: String,password: String};
-const notesDataSchema = {user: String, identificationNumber: String, dependencies: Number}
+const notesDataSchema = {user: String, name: String, identificationNumber: String, dependencies: Number, contents: String}
 
 // Models (access point to the data)
 const notes = mongoose.model('notes',notesDataSchema);
