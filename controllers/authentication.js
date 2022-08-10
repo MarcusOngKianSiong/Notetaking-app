@@ -21,9 +21,9 @@ authenticate.post('/login',(req,res)=>{
                     loginFailed: true
                 });
             }else{
-                // const notes = notesData.find({username: "marcus"},(error,notes)=>{
-                //     console.log(notes)
-                // })
+                const notes = notesData.find({username: "marcus"},(error,notes)=>{
+                    console.log(notes)
+                })
                 res.render('../views/note.ejs',{
                     notes: ["something","nothing"]
                 });
