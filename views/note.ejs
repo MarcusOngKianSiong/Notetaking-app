@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/richtexteditor/rte_theme_default.css" />  
-    <script type="text/javascript" src="/richtexteditor/rte.js"></script>  
-    <script type="text/javascript" src='/richtexteditor/plugins/all_plugins.js'></script>  
     <link rel="stylesheet" href="/css/note.css">
     <title>Document</title>
 </head>
@@ -25,9 +22,17 @@
         </div>
     </div>
     <div class="notepad">
-        <div id="div_editor1" > 
-            <p>Initial Document Content</p> 
+        <link rel="stylesheet" href="../richtexteditor/rte_theme_default.css" />
+        <script type="text/javascript" src="../richtexteditor/rte.js"></script>
+        <script type="text/javascript" src='../richtexteditor/plugins/all_plugins.js'></script>
+        <div id="div_editor1">
+	        <p>This is a default toolbar demo of Rich text editor.</p>
+	        <p><img src='../richtexteditor/docs/images/editor-image.png' /></p>
         </div>
+        <script>
+	        var editor1 = new RichTextEditor("#div_editor1");
+	        //editor1.setHTMLCode("Use inline HTML or setHTMLCode to init the default content.");
+        </script>
     </div>
     
     
