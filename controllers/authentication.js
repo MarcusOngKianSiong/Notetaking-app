@@ -27,7 +27,9 @@ authenticate.post('/login',(req,res)=>{
                     loginFailed: true
                 });
             }else{
-                res.render('../views/note.ejs');
+                res.render('../views/note.ejs',{
+                    notes: ["something","nothing"]
+                });
             }
         }
     })
