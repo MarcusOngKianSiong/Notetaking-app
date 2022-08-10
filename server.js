@@ -8,13 +8,15 @@ const app = express();
 const authenticate = require("./controllers/authentication.js")
 const createNewNote = require("./controllers/creatingNotes.js")
 
-// model
 
+app.use(console.log("Enter!"))
+// model
+app.post('/createNewNote',createNewNote);
 app.use(express.static('public'))
 app.use(express.urlencoded({extended:false}));
 app.use('/login',authenticate);                                     // LOGIN STEP
 
-app.post('/createNewNote',createNewNote);
+
 
 app.get('/',(req,res)=>{
     console.log("------------LOGIN PAGE OPENING!!!--------"); 
@@ -28,5 +30,6 @@ app.post('/login',authenticate)
 const PORT = process.env.PORT || 3000;
 app.listen(PORT,()=>{
     console.log("Listening to port 3000")
+
 })
 
