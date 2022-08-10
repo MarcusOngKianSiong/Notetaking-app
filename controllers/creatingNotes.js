@@ -6,6 +6,7 @@ const accountsData = require("../public/database/accessPoint.js").accountsData;
 const notesData = require("../public/database/accessPoint.js").notesData;
 
 creatingNewNote.get("/createNewNote",(req,res)=>{
+    console.log("-----CREATING NEW NOTE-----")
     // create a document in the collection
     notesData.create({user: "marcus", name: "random", identificationNumber: "1", dependencies: "0", contents: "Something here"})
     
