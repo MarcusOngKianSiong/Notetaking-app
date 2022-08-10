@@ -26,8 +26,7 @@ creatingNewNote.post('/createNewNote',(req,res)=>{
                 notes: notes
             })    
         })
-    }, 1000); 
-    
+    }, 500); 
 })
 
 
