@@ -29,12 +29,19 @@
 	        <p>Something here</p>
         </div>
         <script>
-	         var editor1 = new RichTextEditor("#div_editor1");
-             editor1.attachEvent("change",()=>{
+	        var editor1 = new RichTextEditor("#div_editor1"); 
+            editor1.attachEvent("change",()=>{
                 console.log(editor1.getText());
-             })
+            })
 	        //editor1.setHTMLCode("Use inline HTML or setHTMLCode to init the default content.");
         </script>
     </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+    </script>
+    
+</script>
 </body>
 </html>
