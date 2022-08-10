@@ -11,10 +11,12 @@
     <div class="noteOrganiser">
         <div class="topBar">
             <input type="button" value="logout">
-            <input type="button" value="+">
+            <input type="button" value="+" href="">
         </div>
         <div class="notes">
-
+            <%for (let i = 0; i < notes.length ; i++){%>
+                <p><%=notes[i]%></p>
+            <%}%> 
         </div>
     </div>
     <div class="notepad">

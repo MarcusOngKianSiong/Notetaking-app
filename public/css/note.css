@@ -21,3 +21,7 @@
     margin-left: 2%;
     margin-right: 2%;
 }
+.notes{
+    display: flex;
+    flex-direction: column;
+}
