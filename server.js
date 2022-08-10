@@ -9,13 +9,13 @@ const authenticate = require("./controllers/authentication.js")
 const createNewNote = require("./controllers/creatingNotes.js")
 
 
-app.use(console.log("Enter!"))
+
 // model
 app.post('/createNewNote',createNewNote);
 app.use(express.static('public'))
 app.use(express.urlencoded({extended:false}));
 app.use('/login',authenticate);                                     // LOGIN STEP
-
+app.use('/createNewNote',createNewNote);
 
 
 app.get('/',(req,res)=>{
