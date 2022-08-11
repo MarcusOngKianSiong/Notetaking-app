@@ -3,6 +3,7 @@ const notesData = require("../public/database/accessPoint.js").notesData;
 
 function findFirstDocumentIdentificationNumber(){
     console.log("----FINDING FIRST DOCUMENT IDENTIFICATION NUMBER----")
+    console.log(notesData.findOne())
     return notesData.findOne().identificationNumber;
 }
 
