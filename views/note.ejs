@@ -31,11 +31,11 @@
         </div>
         
         <script>
-            var socket = io();
+            // var socket = io();
 	        var editor1 = new RichTextEditor("#div_editor1");
             editor1.attachEvent("change",()=>{
                 console.log(editor1.getText());
-                
+                // socket.emit("changes",editor1.getText());
             }) 
 	        //editor1.setHTMLCode("Use inline HTML or setHTMLCode to init the default content.");
         </script>
