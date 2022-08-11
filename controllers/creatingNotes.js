@@ -17,7 +17,7 @@ creatingNewNote.post('/createNewNote',(req,res)=>{
     console.log("-----CREATING NEW NOTE-----")
     // create a document in the collection
     // Find the last note
-    const identification = 0;
+    let identification = 0;
     notesData.find((error,notes)=>{
         if(notes.length !== 0){
             identification = notes.length+1;
