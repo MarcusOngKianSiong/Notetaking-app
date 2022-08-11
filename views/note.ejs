@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/note.css">
     <title>Document</title>
+    <script src="../node_modules/socket.io/client-dist/socket.io.js"></script>
 </head>
 <body>
     <div class="noteOrganiser">
@@ -23,7 +24,7 @@
     </div>
     <div class="notepad" id=<%=identificationNumber%>>
         <link rel="stylesheet" href="/richtexteditor/rte_theme_default.css" />
-        <script src="../node_modules/socket.io/client-dist/socket.io.js"></script>
+        
         <script type="text/javascript" src="/richtexteditor/rte.js"></script>
         <script type="text/javascript" src='/richtexteditor/plugins/all_plugins.js'></script>
         <div id="div_editor1">
@@ -33,7 +34,7 @@
         <script>
             // var socket = io();
 	        const editor1 = new RichTextEditor("#div_editor1");
-            const socket = io();
+            
             editor1.attachEvent("change",()=>{
                 console.log(editor1.getText());
                 // socket.emit("changes",editor1.getText());
