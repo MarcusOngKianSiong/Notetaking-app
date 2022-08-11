@@ -14,7 +14,7 @@ io.on('connection',(socket)=>{
         console.log("content: ",content);
     })
 })
-io.
+
 
 
 // Controllers
