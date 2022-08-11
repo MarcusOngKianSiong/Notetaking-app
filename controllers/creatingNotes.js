@@ -24,7 +24,7 @@ creatingNewNote.post('/createNewNote',(req,res)=>{
         }else{
             identification = 1;
         }
-        notesData.create({user: "marcus", name: "random", identificationNumber: identification, dependencies: "0", contents: "Write Something"});
+        notesData.create({user: "marcus", name: "random", identificationNumber: identification, dependencies: "0", contents: `Write Something ${identification}`});
     })
     setTimeout(function(){
         notesData.find((error,notes)=>{ 
