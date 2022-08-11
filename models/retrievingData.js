@@ -9,4 +9,4 @@ function findFirstDocumentIdentificationNumber(){
     })
 }
 
-module.exports = findFirstDocumentIdentificationNumber();
+module.exports = findFirstDocumentIdentificationNumber;

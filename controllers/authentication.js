@@ -1,7 +1,7 @@
 const { compare } = require("bcrypt");
 const express = require("express");
 const authenticate = express.Router();
-const findFirst = require("../models/retrievingData.js");
+const findFirst = require("/models/retrievingData.js");
 const accountsData = require("../public/database/accessPoint.js").accountsData;
 const notesData = require("../public/database/accessPoint.js").notesData;
 
