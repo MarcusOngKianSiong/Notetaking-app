@@ -28,7 +28,7 @@ authenticate.post('/login',(req,res)=>{
                             notes: notes,
                             identificationNumber: notes[0].identificationNumber,
                             contents: notes[0].contents
-                        });    
+                        });
                     })
                 })
                 

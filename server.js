@@ -24,7 +24,6 @@ app.use(express.urlencoded({extended:false}));
 app.use('/login',authenticate);                                     // LOGIN STEP
 app.use('/createNewNote',createNewNote);
 
-
 app.get('/',(req,res)=>{
     console.log("------------LOGIN PAGE OPENING!!!--------"); 
     res.render('index.ejs',{
@@ -32,11 +31,10 @@ app.get('/',(req,res)=>{
     })
 })
 
-app.post('/login',authenticate)
+app.post('/login',authenticate);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT,()=>{
-    console.log("Listening to port 3000")
-
+    console.log("Listening to port 3000");
 })
 
