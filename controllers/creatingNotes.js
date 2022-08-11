@@ -14,7 +14,7 @@ function displayAllNotes(){
 }
 
 creatingNewNote.post('/createNewNote',(req,res)=>{
-    console.log("-----CREATING NEW NOTE-----")
+    console.log("-----CREATING NEW NOTE-----");
     // create a document in the collection
     // Find the last note
     let identification = 0;
@@ -27,7 +27,7 @@ creatingNewNote.post('/createNewNote',(req,res)=>{
         notesData.create({user: "marcus", name: "random", identificationNumber: identification, dependencies: "0", contents: "Write Something"});
     })
     setTimeout(function(){
-        notesData.find({identificationNumber: identification},(error,notes)=>{
+        notesData.find((error,notes)=>{ 
             res.render('note.ejs',{
                 notes: notes,
                 identificationNumber: notes[notes.length-1].identificationNumber,
