@@ -37,7 +37,8 @@
             
             editor1.attachEvent("change",()=>{
                 console.log(editor1.getText());
-                // socket.emit("changes",editor1.getText());
+                const socket = io();
+                socket.emit("changes",editor1.getText());
             }) 
 	        //editor1.setHTMLCode("Use inline HTML or setHTMLCode to init the default content.");
         </script>
