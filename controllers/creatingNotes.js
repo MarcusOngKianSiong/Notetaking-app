@@ -29,7 +29,8 @@ creatingNewNote.post('/createNewNote',(req,res)=>{
     setTimeout(function(){
         notesData.find({identificationNumber: identification},(error,notes)=>{
             res.render('note.ejs',{
-                notes: notes
+                notes: notes,
+                identificationNumber: notes[notes.length-1].identificationNumber
             })
         })
     }, 500); 
