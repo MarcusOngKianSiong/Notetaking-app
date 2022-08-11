@@ -32,8 +32,8 @@
         
         <script>
             // var socket = io();
-	        var editor1 = new RichTextEditor("#div_editor1");
-            var socket = io();
+	        const editor1 = new RichTextEditor("#div_editor1");
+            const socket = io();
             editor1.attachEvent("change",()=>{
                 console.log(editor1.getText());
                 // socket.emit("changes",editor1.getText());
