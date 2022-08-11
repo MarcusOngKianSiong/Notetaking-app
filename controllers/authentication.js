@@ -25,7 +25,7 @@ authenticate.post('/login',(req,res)=>{
                 notesData.find({username: "marcus"},(error,notes)=>{
                     res.render('../views/note.ejs',{
                         notes: notes,
-                        identificationNumber: findFirst();
+                        identificationNumber: findFirst()
                     });
                 })
                 
