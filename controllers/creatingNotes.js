@@ -30,7 +30,8 @@ creatingNewNote.post('/createNewNote',(req,res)=>{
         notesData.find({identificationNumber: identification},(error,notes)=>{
             res.render('note.ejs',{
                 notes: notes,
-                identificationNumber: notes[notes.length-1].identificationNumber
+                identificationNumber: notes[notes.length-1].identificationNumber,
+                contents: notes[notes.length-1].contents
             })
         })
     }, 500); 
