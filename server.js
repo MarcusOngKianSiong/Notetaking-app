@@ -8,7 +8,9 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 
-
+io.on('connection',(socket)=>{
+    console.log('a user is connected...');
+})
 
 // Controllers
 const authenticate = require("./controllers/authentication.js")

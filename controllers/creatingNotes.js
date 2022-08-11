@@ -27,7 +27,7 @@ creatingNewNote.post('/createNewNote',(req,res)=>{
         notesData.create({user: "marcus", name: "random", identificationNumber: identification, dependencies: "0", contents: `Write Something ${identification}`});
     })
     setTimeout(function(){
-        notesData.find((error,notes)=>{ 
+        notesData.find((error,notes)=>{
             res.render('note.ejs',{
                 notes: notes,
                 identificationNumber: notes[notes.length-1].identificationNumber,
