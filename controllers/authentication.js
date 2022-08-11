@@ -1,7 +1,7 @@
 const { compare } = require("bcrypt");
 const express = require("express");
+const { connections } = require("mongoose");
 const authenticate = express.Router();
-const findFirst = require("../models/retrievingData.js");
 const accountsData = require("../public/database/accessPoint.js").accountsData;
 const notesData = require("../public/database/accessPoint.js").notesData;
 
@@ -24,10 +24,12 @@ authenticate.post('/login',(req,res)=>{
             }else{
                 notesData.find({username: "marcus"},(error,notes)=>{
                     console.log("HERE: ",findFirst());
-                    res.render('../views/note.ejs',{
-                        notes: notes,
-                        identificationNumber: 1
-                    });
+                    notesData.find((error,notes)=>{
+                        res.render('../views/note.ejs',{
+                            notes: notes,
+                            identificationNumber: notes[0].identificationNumber
+                        });    
+                    })
                 })
                 
             }
