@@ -34,7 +34,7 @@ creatingNewNote.post('/createNewNote',(req,res)=>{
                 contents: notes[notes.length-1].contents
             })
         })
-    }, 500); 
+    }, 1000); 
 })
 
 
