@@ -23,13 +23,19 @@ authenticate.post('/login',(req,res)=>{
                 });
             }else{
                 notesData.find({username: "marcus"},(error,notes)=>{
-                    notesData.find((error,notes)=>{
-                        res.render('../views/note.ejs',{
-                            notes: notes,
-                            identificationNumber: notes[0].identificationNumber,
-                            contents: notes[0].contents
-                        });
-                    })
+                    if(notes.length === 0){
+                        notesData.create({identificationNumber: 1,name: "random",contents: "Write Something!"})
+                    }
+                    setTimeout(() => {
+                        notesData.find((error,notes)=>{
+                            res.render('../views/note.ejs',{
+                                notes: notes,
+                                identificationNumber: notes[0].identificationNumber,
+                                contents: notes[0].contents
+                            });
+                        })    
+                    }, 500);
+                    
                 })
                 
             }
