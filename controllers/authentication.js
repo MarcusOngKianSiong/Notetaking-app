@@ -1,7 +1,7 @@
 const { compare } = require("bcrypt");
 const express = require("express");
 const authenticate = express.Router();
-const findFirst = require("/models/retrievingData.js");
+const findFirst = require("../models/retrievingData.js");
 const accountsData = require("../public/database/accessPoint.js").accountsData;
 const notesData = require("../public/database/accessPoint.js").notesData;
 
@@ -26,7 +26,7 @@ authenticate.post('/login',(req,res)=>{
                     console.log("HERE: ",findFirst());
                     res.render('../views/note.ejs',{
                         notes: notes,
-                        identificationNumber: findFirst()
+                        identificationNumber: 1
                     });
                 })
                 
