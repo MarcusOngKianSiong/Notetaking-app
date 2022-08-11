@@ -10,7 +10,12 @@ const io = new Server(server);
 
 io.on('connection',(socket)=>{
     console.log('a user is connected...');
+    socket.on('changes',(content)=>{
+        console.log("content: ",content);
+    })
 })
+io.
+
 
 // Controllers
 const authenticate = require("./controllers/authentication.js")
