@@ -2,11 +2,18 @@ const express = require('express');
 const accountsData = require("./public/database/accessPoint.js").accountsData;
 const notesData = require("./public/database/accessPoint.js").notesData;
 const mongoose = require("mongoose");
+const http = require("http");
+const { Server } = require("socket.io");
 const app = express();
+const server = http.createServer(app);
+const io = new Server(server);
+
+
 
 // Controllers
 const authenticate = require("./controllers/authentication.js")
-const createNewNote = require("./controllers/creatingNotes.js")
+const createNewNote = require("./controllers/creatingNotes.js");
+const { Socket } = require('dgram');
 
 
 
