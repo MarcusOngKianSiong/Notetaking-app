@@ -8,7 +8,7 @@
     <title>Document</title>
     <script src="../node_modules/socket.io/client-dist/socket.io.js"></script>
     <script>
-        const socket = io();
+        // const socket = io();
     </script>
 </head>
 <body>
@@ -35,7 +35,7 @@
         </div>
         
         <script>
-            // var socket = io();
+            var socket = io();
 	        const editor1 = new RichTextEditor("#div_editor1");
             editor1.attachEvent("change",()=>{
                 console.log(editor1.getText());
