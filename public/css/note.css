@@ -37,6 +37,7 @@ body{
     display: flex;
     flex-direction: column;
     color: white;    
+    text-align: left;
 }
 .notes *{
     border: 1px solid red;

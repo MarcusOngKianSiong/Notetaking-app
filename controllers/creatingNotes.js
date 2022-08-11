@@ -10,21 +10,27 @@ function createNewNote(){
 }
 function displayAllNotes(){
     let listOfNotes = [];
-    
     return listOfNotes;
 }
 
 creatingNewNote.post('/createNewNote',(req,res)=>{
     console.log("-----CREATING NEW NOTE-----")
     // create a document in the collection
-    // Gather a list of documents by name
-    
-    notesData.create({user: "marcus", name: "random", identificationNumber: "1", dependencies: "0", contents: "Something here"})
+    // Find the last note
+    const identification = 0;
+    notesData.find((error,notes)=>{
+        if(notes.length !== 0){
+            identification = notes.length+1;
+        }else{
+            identification = 1;
+        }
+        notesData.create({user: "marcus", name: "random", identificationNumber: identification, dependencies: "0", contents: "Write Something"});
+    })
     setTimeout(function(){
-        notesData.find({user: "marcus"},(error,notes)=>{
+        notesData.find({identificationNumber: identification},(error,notes)=>{
             res.render('note.ejs',{
                 notes: notes
-            })    
+            })
         })
     }, 500); 
 })

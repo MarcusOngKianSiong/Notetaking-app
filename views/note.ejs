@@ -17,7 +17,7 @@
         </div>
         <div class="notes">
             <%for(let i = 0; i<notes.length ; i++){%>
-                <input type="button" id="<%=notes[i].identificationNumber%>" value="<%=notes[i].name%>">
+                <input type="button" id="<%=notes[i].identificationNumber%>" value="<%=notes[i].identificationNumber%> <%=notes[i].name%>">
             <%}%>
         </div>
     </div>
