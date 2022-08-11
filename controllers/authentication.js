@@ -23,7 +23,7 @@ authenticate.post('/login',(req,res)=>{
                 });
             }else{
                 notesData.find({username: "marcus"},(error,notes)=>{
-                    console.log("HERE: ",findFirst())
+                    console.log("HERE: ",findFirst());
                     res.render('../views/note.ejs',{
                         notes: notes,
                         identificationNumber: findFirst()
