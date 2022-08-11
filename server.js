@@ -36,7 +36,7 @@ app.get('/',(req,res)=>{
 app.post('/login',authenticate);
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT,()=>{
+server.listen(PORT,()=>{
     console.log("Listening to port 3000");
 })
 
