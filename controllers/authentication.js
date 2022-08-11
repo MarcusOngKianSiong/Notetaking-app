@@ -26,7 +26,8 @@ authenticate.post('/login',(req,res)=>{
                     notesData.find((error,notes)=>{
                         res.render('../views/note.ejs',{
                             notes: notes,
-                            identificationNumber: notes[0].identificationNumber
+                            identificationNumber: notes[0].identificationNumber,
+                            contents: notes[0].contents
                         });    
                     })
                 })
