@@ -6,13 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/note.css">
     <title>Document</title>
-    <script src="../node_modules/socket.io/client-dist/socket.io.js"></script>
-    <script>
-        // const socket = io();
-    </script>
 </head>
 <body>
     <div class="noteOrganiser">
+        
         <div class="topBar">
             <input type="button" value="logout">
             <form action="https://takingnote-app.herokuapp.com/createNewNote" method="post">
@@ -20,6 +17,7 @@
             </form>
         </div>
         <div class="notes">
+            <link href="/save">Save</link>
             <%for(let i = 0; i<notes.length ; i++){%>
                 <input type="button" id="<%=notes[i].identificationNumber%>" value="<%=notes[i].identificationNumber%> <%=notes[i].name%>">
             <%}%>
@@ -35,12 +33,19 @@
         </div>
         
         <script>
-            
+            const content = "";
 	        const editor1 = new RichTextEditor("#div_editor1");
-            var socket = io();
+            const saving = true;
             editor1.attachEvent("change",()=>{
-                socket.emit("changes",editor1.getText());
-            }) 
+                content = editor1.getText();
+                if(saving === false){
+                    saving = true;
+                    setTimeout(() => {
+                        fetch('https://')
+                        saving = false;
+                    }, 5000);
+                }
+            })
 	        //editor1.setHTMLCode("Use inline HTML or setHTMLCode to init the default content.");
         </script>
     </div>
