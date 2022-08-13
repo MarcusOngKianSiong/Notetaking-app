@@ -9,7 +9,6 @@
 </head>
 <body>
     <div class="noteOrganiser">
-        
         <div class="topBar">
             <input type="button" value="logout">
             <form action="https://takingnote-app.herokuapp.com/createNewNote" method="post">
@@ -17,35 +16,29 @@
             </form>
         </div>
         <div class="notes">
-            <link href="/save">Save</link>
             <%for(let i = 0; i<notes.length ; i++){%>
-                <input type="button" id="<%=notes[i].identificationNumber%>" value="<%=notes[i].identificationNumber%> <%=notes[i].name%>">
+                <form action="change" method="get">
+                    <input type="button" id="<%=notes[i].identificationNumber%>" value="<%=notes[i].identificationNumber%> <%=notes[i].name%>">
+                </form>
             <%}%>
         </div>
     </div>
     <div class="notepad" id=<%=identificationNumber%>>
+        <button class="save">Save</button>
         <link rel="stylesheet" href="/richtexteditor/rte_theme_default.css" />
-        
         <script type="text/javascript" src="/richtexteditor/rte.js"></script>
         <script type="text/javascript" src='/richtexteditor/plugins/all_plugins.js'></script>
         <div id="div_editor1">
 	        <p><%=contents%></p>
-        </div>
-        
+        </div>        
         <script>
             const content = "";
 	        const editor1 = new RichTextEditor("#div_editor1");
-            const saving = true;
             editor1.attachEvent("change",()=>{
                 content = editor1.getText();
-                if(saving === false){
-                    saving = true;
-                    setTimeout(() => {
-                        fetch('https://')
-                        saving = false;
-                    }, 5000);
-                }
             })
+            const save = document.querySelector(".save");
+            
 	        //editor1.setHTMLCode("Use inline HTML or setHTMLCode to init the default content.");
         </script>
     </div>

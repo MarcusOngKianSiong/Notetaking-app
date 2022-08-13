@@ -11,6 +11,7 @@ const io = new Server(server);
 // Controllers
 const authenticate = require("./controllers/authentication.js")
 const createNewNote = require("./controllers/creatingNotes.js");
+const updateNote = require("./controllers/updateContent.js");
 
 // model
 app.post('/createNewNote',createNewNote);
@@ -18,6 +19,7 @@ app.use(express.static('public'))
 app.use(express.urlencoded({extended:false}));
 app.use('/login',authenticate);                                     // LOGIN STEP
 app.use('/createNewNote',createNewNote);
+app.use('/save',updateNote);
 
 app.get('/',(req,res)=>{
     console.log("------------LOGIN PAGE OPENING!!!--------"); 
